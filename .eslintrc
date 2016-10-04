@@ -1,0 +1,46 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true,
+    "commonjs": true
+  },
+  "globals": {
+    "expect": true,
+    "__DEVTOOLS__": true,
+    "__DEVELOPMENT__": true
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "quotes": [2, "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+    "no-undef": 2,
+    "global-require": 0,
+    "no-underscore-dangle": 0,
+    "no-console": 2,
+    "no-trailing-spaces": [1, { "skipBlankLines": true }],
+    "padded-blocks": ["warn", "never"],
+    "import/no-unresolved": 0,
+    "object-shorthand": 1,
+    "new-cap": 0,
+    "max-len": 0,
+    "jsx-quotes": ["error", "prefer-double"],
+    "arrow-body-style": ["warn", "as-needed"],
+    "array-callback-return": 1,
+    "react/jsx-boolean-value": 0,
+    "jsx-a11y/img-has-alt": 0,
+    "react/jsx-no-bind": ["warn", { "allowArrowFunctions": false, "allowBind": false }]
+  }
+}
