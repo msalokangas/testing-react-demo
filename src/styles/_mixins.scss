@@ -1,0 +1,41 @@
+@import './foundation/settings';
+
+@mixin indicator() {
+  margin-right: 1.7rem;
+  display: inline-block;
+  transform: none !important;
+  i {
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    padding: .4rem .2rem;
+    border-radius: 50%;
+    background-color: $gray-teal;
+    color: #FFF;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+@mixin ovalButton {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    color: $white;
+    background-color: $pale-teal;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding-top: 0.3rem;
+    padding-right: 0.8rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.8rem;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+
+    &:hover,
+    &:focus {
+      background-color: $teal-selected;
+    }
+}

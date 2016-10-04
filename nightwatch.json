@@ -1,0 +1,53 @@
+{
+  "src_folders" : ["e2e"],
+  "output_folder" : "e2e_reports",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "page_objects_path" : "",
+  "globals_path" : "",
+  "selenium" : {
+    "start_process" : false,
+    "host" : "hub-cloud.browserstack.com",
+    "port" : 80
+  },
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://localhost:8000",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "silent": true,
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+    "browserstack": {
+      "selenium_port": 80,
+      "selenium_host": "hub-cloud.browserstack.com",
+      "launch_url" : "http://circle-demo.s3-website-us-east-1.amazonaws.com",
+      "argv": {
+        "env": "browserstack"
+      },
+      "desiredCapabilities": {
+        "build": "nightwatch-browserstack",
+        "browserstack.user": "",
+        "browserstack.key": "",
+        "browserName" : "iPad",
+        "platform" : "MAC",
+        "device" : "iPad Air",
+        "deviceOrientation": "landscape"
+      },
+      "settings": {
+        "silent": true
+      }
+    },
+    "chrome" : {
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    }
+  }
+}

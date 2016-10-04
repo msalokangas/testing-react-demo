@@ -1,0 +1,12 @@
+@import "settings";
+@import "./scss/foundation";
+
+@include foundation-global-styles;
+@include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-visibility-classes;
+
+html, body {
+  height: 100%;
+}

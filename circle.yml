@@ -1,0 +1,21 @@
+machine:
+  node:
+    version: 6.0
+  environment:
+    CONTINUOUS_INTEGRATION: true
+
+dependencies:
+  cache_directories:
+    - node_modules
+  override:
+    - npm prune && npm install
+
+test:
+  pre:
+    - npm run dist:integration
+    - aws s3 sync dist-integration s3://circle-demo/ --delete
+  override:
+    - npm run test:coverage
+    - npm run test:e2e
+  post:
+    - npm run nyc:report

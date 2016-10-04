@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title><%= htmlWebpackPlugin.options.title%></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <% if (htmlWebpackPlugin.options.baseHref) { %>
+  <base href="<%= htmlWebpackPlugin.options.baseHref %>" />
+  <% } %>
+  <% if (htmlWebpackPlugin.files.favicon) { %>
+  <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon%>">
+  <% } %>
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+  <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+  <% } %>
+  <% if (htmlWebpackPlugin.options.manifest) { %>
+  <link rel="manifest" href="<%= htmlWebpackPlugin.options.manifest %>" />
+  <% } %>
+</head>
+<body>
+<% if (htmlWebpackPlugin.options.appMountId) { %>
+<div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
+<% } %>
+
+<% if (htmlWebpackPlugin.options.appMountIds && htmlWebpackPlugin.options.appMountIds.length > 0) { %>
+<% for (var index in htmlWebpackPlugin.options.appMountIds) { %>
+<div id="<%= htmlWebpackPlugin.options.appMountIds[index]%>"></div>
+<% } %>
+<% } %>
+
+<% if (htmlWebpackPlugin.options.window) { %>
+<script>
+  <% for (var varName in htmlWebpackPlugin.options.window) { %>
+    window['<%=varName%>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName]) %>;
+  <% } %>
+</script>
+<% } %>
+
+<script>__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
+
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% } %>
+
+<% if (htmlWebpackPlugin.options.devServer) { %>
+<script src="<%= htmlWebpackPlugin.options.devServer%>/webpack-dev-server.js"></script>
+<% } %>
+</body>
+</html>
