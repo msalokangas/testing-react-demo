@@ -9,6 +9,8 @@ Test Frameworks/Libraries used in the demo;
 - Enzyme https://github.com/airbnb/enzyme
 - Selenium http://www.seleniumhq.org/
 - Nightwatch http://nightwatchjs.org/
+- Istanbul/nyc https://istanbul.js.org/
+- Nock https://github.com/node-nock/nock
 
 Services being used in the demo;
 - Amazon S3
